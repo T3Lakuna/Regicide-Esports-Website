@@ -1,0 +1,154 @@
+@use 'modules/variables' as v;
+
+body {
+	background-color: v.$dark-gray-tint;
+	color: v.$logo-white;
+	font-size: 14pt;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-size: 24pt;
+		font-family: Impact, sans-serif;
+	}
+
+	// Default highlighted elements.
+	h1, h2, h3, h4, h5, h6, b, i, svg, a, a:visited, em {
+		color: v.$logo-gold;
+	}
+
+	div#socials {
+		height: 50px;
+		line-height: 50px;
+		padding: 0px 100px;
+		background-color: v.$black-tint;
+
+		& > nav {
+			text-align: right;
+
+			i, svg {
+				padding: 0px 15px;
+			}
+		}
+	}
+
+	div#tabs {
+		height: 100px;
+		line-height: 100px;
+		padding: 0px 50px;
+		background-image: linear-gradient(to bottom right, v.$dark-gray-tint, v.$black-tint);
+
+		& > a > img#logo {
+			float: left;
+			height: 90%;
+		}
+
+		& > nav {
+			// overflow: hidden;
+			height: 100%;
+
+			& > a, button {
+				float: right;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				font-family: Impact, sans-serif;
+				padding: 0px 10px;
+				height: 100%;
+				background-color: inherit;
+				border: none;
+
+				&:hover {
+					color: v.$logo-white;
+				}
+
+				&#topnav-collapse {
+					display: none;
+				}
+			}
+
+			@media (max-width: v.$mobile-breakpoint) {
+				& > a, button {
+					display: none;
+
+					&#topnav-collapse {
+						display: block;
+					}
+				}
+
+				&.expanded {
+					position: relative;
+
+					& > a, button {
+						float: none;
+						display: block;
+						text-align: left;
+						background-color: v.$dark-gray-tint;
+
+						&#topnav-collapse {
+							position: absolute;
+							right: 0;
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	div#animated-background {
+		background-image: url('/s/img/placeholder.gif');
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 500px;
+
+		& > div {
+			padding: 10px 50px;
+			margin: auto;
+			width: 90%;
+
+			& > p {
+				color: v.$logo-gold;
+			}
+
+			& > h1, h2, h3, h4, h5, h6 {
+				color: v.$logo-white;
+			}
+
+			& > a {
+				color: v.$logo-crimson;
+				background-color: v.$logo-gold;
+				padding: 5px 15px;
+				text-decoration: none;
+			}
+		}
+	}
+
+	div#sponsors {
+		height: 50px;
+		background-color: v.$black-tint;
+		text-align: center;
+
+		& > img {
+			display: inline-block;
+			margin: auto;
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	div#about {
+		float: left;
+		width: 65%;
+		padding: 0% 2%;
+	}
+
+	div#news {
+		float: right;
+		width: 25%;
+		height: 500px;
+		overflow: auto;
+		border: 1px solid v.$logo-gold;
+	}
+}
