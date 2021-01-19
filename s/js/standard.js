@@ -1,1 +1,0 @@
-addLoadEvent=t=>{const e=onload;onload="function"!=typeof e?t:()=>{e(),t()}},addLoadEvent(()=>{document.querySelectorAll("*").forEach(t=>{const e=t.getAttribute("load");e&&fetch(e).then(t=>t.text()).then(e=>t.innerHTML=e)})});const expandTopnav=()=>document.getElementById("topnav").classList.toggle("expanded");
