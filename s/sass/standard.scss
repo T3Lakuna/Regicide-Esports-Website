@@ -5,8 +5,8 @@ body {
 	color: v.$logo-white;
 	font-size: 14pt;
 	font-family: sans-serif;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 
 	h1, h2, h3, h4, h5, h6 {
 		font-size: 24pt;
@@ -38,6 +38,7 @@ body {
 		line-height: 100px;
 		padding: 0px 50px;
 		background-image: linear-gradient(to bottom right, v.$dark-gray-tint, v.$black-tint);
+		border-top: 1px solid v.$light-gray-tint;
 
 		& > a > img#logo {
 			float: left;
@@ -98,7 +99,7 @@ body {
 	}
 
 	div#animated-background {
-		background-image: url('/s/img/placeholder.gif');
+		background-image: url('/s/img/index.gif');
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 500px;
@@ -138,6 +139,11 @@ body {
 		}
 	}
 
+	div#about-container {
+		display: inline-block;
+		border-top: 1px solid v.$light-gray-tint;
+	}
+
 	div#about {
 		float: left;
 		width: 65%;
@@ -150,5 +156,34 @@ body {
 		height: 500px;
 		overflow: auto;
 		border: 1px solid v.$logo-gold;
+	}
+
+	div#information {
+		height: 300px;
+		padding: 0% 30%;
+		background-color: v.$black-tint;
+		border-top: 1px solid v.$light-gray-tint;
+
+		& > div {
+			display: inline-block;
+
+			&#left {
+				float: left;
+			}
+
+			&#right {
+				float: right;
+			}
+		}
+	}
+
+	div#copyright-bar {
+		height: 60px;
+		line-height: 50px;
+		font-size: 10px;
+		padding: 0px 15px;
+		background-color: v.$black-tint;
+		border-top: 1px solid v.$light-gray-tint;
+		text-align: right;
 	}
 }
