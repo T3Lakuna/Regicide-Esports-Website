@@ -8,14 +8,25 @@ body {
 	margin: 0px;
 	padding: 0px;
 
+	main {
+		min-height: 100vh;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
-		font-size: 24pt;
 		font-family: Impact, sans-serif;
 	}
 
 	// Default highlighted elements.
 	h1, h2, h3, h4, h5, h6, b, i, svg, a, a:visited, em {
 		color: v.$logo-gold;
+	}
+
+	hr {
+		border-color: v.$logo-gold;
+	}
+
+	button {
+		border: none;
 	}
 
 	div#socials {
@@ -185,5 +196,46 @@ body {
 		background-color: v.$black-tint;
 		border-top: 1px solid v.$light-gray-tint;
 		text-align: right;
+	}
+
+	div.tab {
+		& > div.tab-controller {
+			overflow: hidden;
+			border: 1px solid v.$dark-gray-tint;
+			background-color: v.$dark-gray-tint;
+			color: v.$logo-gold;
+
+			& > button.tab-button {
+				background-color: v.$dark-gray-tint;
+				color: v.$logo-gold;
+				padding: 15px;
+				float: left;
+
+				&:hover, &.active {
+					background-color: v.$logo-gold;
+					color: v.$dark-gray-tint;
+				}
+			}
+		}
+
+		& > div.tab-content {
+			& > div.tab-panel {
+				display: none;
+				padding: 6px 12px;
+				border: 1px solid v.$dark-gray-tint;
+				border-top: none;
+				text-align: center;
+
+				&.active {
+					display: block;
+				}
+
+				&.names > img {
+					height: 200px;
+					width: auto;
+					background-color: v.$light-gray-tint;
+				}
+			}
+		}
 	}
 }

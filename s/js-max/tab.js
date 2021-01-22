@@ -1,3 +1,16 @@
+/*
+<div class='tab'>
+	<div class='tab-controller'>
+		<button class='tab-button active'>Tab 1</button>
+		<button class='tab-button'>Tab 2</button>
+	</div>
+	<div class='tab-content'>
+		<div id='Tab_1' class='tab-panel active'></div>
+		<div id='Tab_2' class='tab-panel'></div>
+	</div>
+</div>
+*/
+
 // Credit: Simon Willison.
 addLoadEvent = (event) => {
 	const old = onload;
@@ -10,15 +23,6 @@ addLoadEvent = (event) => {
 		}
 	}
 }
-
-const expandTopnav = () => document.getElementById('topnav').classList.toggle('expanded');
-
-addLoadEvent(() => {
-	document.querySelectorAll('*').forEach((element) => {
-		const load = element.getAttribute('load');
-		if (load) { fetch(load).then((response) => response.text()).then((response) => element.innerHTML = response); }
-	});
-});
 
 addLoadEvent(() => {
 	// Find selected tab in URL query parameters.
@@ -38,7 +42,6 @@ addLoadEvent(() => {
 				panel.classList.add('active');
 				button.classList.add('active');
 			};
-			if (panel.classList.contains('auto-open')) { button.click(); }
 			tabController.append(button);
 
 			if (query == panel.id) { button.onclick(); }
