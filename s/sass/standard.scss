@@ -238,4 +238,10 @@ body {
 			}
 		}
 	}
+
+	.mobile-hide {
+		@media (max-width: v.$mobile-breakpoint) {
+			display: none;
+		}
+	}
 }
