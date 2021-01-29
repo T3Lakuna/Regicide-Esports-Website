@@ -244,4 +244,40 @@ body {
 			display: none;
 		}
 	}
+
+	div.roster-expander {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& > div {
+			background-color: v.$light-gray-tint;
+			display: inline-block;
+			overflow: hidden;
+			
+			& > ul {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				list-style: none;
+
+				& > li > div {
+					padding: 15px;
+					text-align: center;
+					overflow: hidden;
+					border: 1px solid v.$logo-gold;
+				}
+
+				&:hover {
+					& > li {
+						width: 10%;
+
+						&:hover {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
 }
